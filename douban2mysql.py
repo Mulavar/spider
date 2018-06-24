@@ -37,16 +37,16 @@ while True:
                                  password='qwer1234',
                                  use_unicode=True,
                                  charset='utf8mb4')
-    try:
-        with connection.cursor() as c:
-            sql1 = 'use spider;'
-            c.execute(sql1)
-            for i in range(25):
-                sql2 = 'insert into douban_film(`title`, `director`, `year`, `rating`) values(%s, %s, %s, %s)'
-                c.execute(sql2, (title_list[i], director_list[i], year_list[i], rating_list[i]))
-                connection.commit()
-    finally:
-        connection.close()
+    # try:
+    #     with connection.cursor() as c:
+    #         sql1 = 'use spider;'
+    #         c.execute(sql1)
+    #         for i in range(25):
+    #             sql2 = 'insert into douban_film(`title`, `director`, `year`, `rating`) values(%s, %s, %s, %s)'
+    #             c.execute(sql2, (title_list[i], director_list[i], year_list[i], rating_list[i]))
+    #             connection.commit()
+    # finally:
+    #     connection.close()
 
     next_page = BeautifulSoup(soup).find_all(attrs={"class": "next"})
     start += 25
