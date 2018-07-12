@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for scrapy_demo2 project
+# Scrapy settings for scrapy_demo3 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,17 +9,17 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'scrapy_demo2'
+BOT_NAME = 'scrapy_demo3'
 
-SPIDER_MODULES = ['scrapy_demo2.spiders']
-NEWSPIDER_MODULE = 'scrapy_demo2.spiders'
+SPIDER_MODULES = ['scrapy_demo3.spiders']
+NEWSPIDER_MODULE = 'scrapy_demo3.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'scrapy_demo2 (+http://www.yourdomain.com)'
+#USER_AGENT = 'scrapy_demo3 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'scrapy_demo2.middlewares.ScrapyDemo2SpiderMiddleware': 543,
+#    'scrapy_demo3.middlewares.ScrapyDemo3SpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'scrapy_demo2.middlewares.ScrapyDemo2DownloaderMiddleware': 543,
+#    'scrapy_demo3.middlewares.ScrapyDemo3DownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,9 +64,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'scrapy_demo2.pipelines.ScrapyDemo2Pipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'scrapy_demo3.pipelines.ScrapyDemo3Pipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,9 +88,10 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+HTTPERROR_ALLOWED_CODES = [404]
 
 DB_HOST = '127.0.0.1'
 DB_USER = 'root'
 DB_PASSWORD = 'qwer1234'
-DB_NAME = 'spider'
+DB_NAME = 'nesa'
 DB_CHARSET = 'utf8'
